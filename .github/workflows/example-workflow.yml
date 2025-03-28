@@ -16,7 +16,7 @@ permissions:
 jobs:
   say-hello:
     name: Say Hello
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       # Change @main to a specific commit SHA or version tag, e.g.:
@@ -24,6 +24,6 @@ jobs:
       # actions/hello-world-javascript-action@v1.2.3
       - name: Print to Log
         id: print-to-log
-        uses: actions/hello-world-javascript-action@main
+        uses: waiwaing/js-action@main
         with:
           who-to-greet: ${{ inputs.who-to-greet }}
