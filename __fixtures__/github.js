@@ -1,5 +1,5 @@
 export const context = {
   payload: {
-    actor: 'mona'
-  }
-}
+    actor: "mona",
+  },
+};
