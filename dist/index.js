@@ -31154,7 +31154,7 @@ function requireGithub () {
 	return github;
 }
 
-var githubExports = requireGithub();
+requireGithub();
 
 var toolCache = {};
 
@@ -33733,18 +33733,13 @@ var toolCacheExports = requireToolCache();
 async function run() {
   try {
     // The `who-to-greet` input is defined in action metadata file
-    const nodeDirectory = toolCacheExports.find("node", "12.x", "x64");
+    const nodeDirectory = toolCacheExports.find("node", "22.x", "x64");
 
     coreExports.info(nodeDirectory);
 
     // Get the current time and set as an output
     const time = new Date().toTimeString();
     coreExports.setOutput("time", time);
-
-    // Output the payload for debugging
-    coreExports.info(
-      `The event payload: ${JSON.stringify(githubExports.context.payload, null, 2)}`,
-    );
   } catch (error) {
     // Fail the workflow step if an error occurs
     coreExports.setFailed(error.message);
